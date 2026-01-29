@@ -63,7 +63,17 @@ La aplicación estará disponible en `http://localhost:3000`
 docker ps
 ```
 
+**Identificación de Usuario:**
+La API identifica al usuario mediante el header `x-user-id` con el ObjectId del usuario.
 
+## Sistema de Usuarios
+
+Los usuarios se almacenan en MongoDB. Para inicializar los usuarios base, ejecuta:
+
+```bash
+curl -X POST http://localhost:3000/api/users/init
+```
+Si da conflictos, usar postman o thunder client
 ## 📁 Estructura del Proyecto
 
 ```
@@ -86,17 +96,6 @@ gestor-de-tareas-bap/
 - `POST /api/tasks` - Crea una nueva tarea
 - `PUT /api/tasks/:id` - Actualiza una tarea
 - `DELETE /api/tasks/:id` - Elimina una tarea
-
-**Identificación de Usuario:**
-La API identifica al usuario mediante el header `x-user-id` con el ObjectId del usuario.
-
-## Sistema de Usuarios
-
-Los usuarios se almacenan en MongoDB. Para inicializar los usuarios base, ejecuta:
-
-```bash
-curl -X POST http://localhost:3000/api/users/init
-```
 
 
 ### Campos de Tarea
